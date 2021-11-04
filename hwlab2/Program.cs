@@ -20,7 +20,6 @@ namespace hwlab2
             {
                 id++;
                 
-               
                 Console.WriteLine("eğitmen adını giriniz: ");
                 string ad = Console.ReadLine();
                 Console.WriteLine("eğitmen soyadını giriniz: ");
@@ -28,36 +27,50 @@ namespace hwlab2
                 Console.WriteLine("eğitmen cinsiyetini seçiniz k ->1 /e->2 :");
                 eGender cinsiyet = (eGender)Convert.ToInt32(Console.ReadLine());
 
-                Teacher teacher1 = new Teacher(id,ad,soyad,cinsiyet);
-                teacher1.WriteInformations();
+                
+                IClassMember teacher = new Teacher(id,ad,soyad,cinsiyet);
+                teachers.Add(teacher);
+
+                
+
                 Console.WriteLine("eğitmen eklemeye devam etmek istiyor musunuz?  evet ->e / hayır->h :");
                 answer = Console.ReadLine();
                 
-
-            }
-            
-
-            answer = "e";
-            while (answer == "e")
-            {
-                id++;
-
-
-                Console.WriteLine("öğrenci adını giriniz: ");
-                string ad = Console.ReadLine();
-                Console.WriteLine("öğrenci soyadını giriniz: ");
-                string soyad = Console.ReadLine();
-                Console.WriteLine("öğrenci cinsiyetini seçiniz k ->1 /e->2 :");
-                eGender cinsiyet = (eGender)Convert.ToInt32(Console.ReadLine());
-
-                Student student1 = new Student(id,ad,soyad,cinsiyet);
                 
-                student1.WriteInformations();
-                Console.WriteLine("öğrenci eklemeye devam etmek istiyor musunuz?  evet ->e / hayır->h :");
-                answer = Console.ReadLine();
+
+            }
+            foreach(IClassMember item in teachers)
+            {
+                item.WriteInformations();
 
 
             }
+
+
+
+
+
+            //answer = "e";
+            //while (answer == "e")
+            //{
+            //    id++;
+
+
+            //    Console.WriteLine("öğrenci adını giriniz: ");
+            //    string ad = Console.ReadLine();
+            //    Console.WriteLine("öğrenci soyadını giriniz: ");
+            //    string soyad = Console.ReadLine();
+            //    Console.WriteLine("öğrenci cinsiyetini seçiniz k ->1 /e->2 :");
+            //    eGender cinsiyet = (eGender)Convert.ToInt32(Console.ReadLine());
+
+            //    Student student1 = new Student(id,ad,soyad,cinsiyet);
+
+            //    student1.WriteInformations();
+            //    Console.WriteLine("öğrenci eklemeye devam etmek istiyor musunuz?  evet ->e / hayır->h :");
+            //    answer = Console.ReadLine();
+
+
+            //}
 
 
         }

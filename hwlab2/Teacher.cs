@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace hwlab2
 {
-    class Teacher
+    class Teacher : IClassMember
     {
         public int Id { get; set; }
         public string Ad { get; set; }
