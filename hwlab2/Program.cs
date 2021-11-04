@@ -13,6 +13,7 @@ namespace hwlab2
         {
             List<IClassMember> teachers = new List<IClassMember>();
             List<IClassMember> students = new List<IClassMember>();
+            List<ClassNotes> notes = new List<ClassNotes>();
 
 
             string answer = "e";
@@ -78,6 +79,28 @@ namespace hwlab2
             foreach (IClassMember item in students)
             {
                 item.WriteInformations();
+
+            }
+            answer = "e";
+            while (answer == "e")
+            {
+                Console.WriteLine("eğitmen no: ");
+                int teacherid = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("öğrenci no: ");
+                int studentid = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine( "not bilgisi girin: ");
+                double not = Convert.ToInt32(Console.ReadLine());
+                
+
+                Console.WriteLine("not eklemeye devam etmek istiyor musunuz?  evet ->e / hayır->h :");
+                answer = Console.ReadLine();
+
+                ClassNotes note = new ClassNotes(teacherid,studentid,grade(not));
+
+
+
+
+
 
             }
 
